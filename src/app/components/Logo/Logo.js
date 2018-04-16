@@ -1,13 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  position: relative;
-  background-color: #000;
-  height: 100px;
-  width: 100px;
-`;
+// Styled Components
+import { Square, Wrapper } from './Logo.sc';
 
 export default class Logo extends React.Component {
   static propTypes = {
@@ -19,6 +14,10 @@ export default class Logo extends React.Component {
   };
 
   render() {
-    return(<Wrapper>You did it!</Wrapper>);
+    return(
+      <Wrapper>
+        <Square />
+      </Wrapper>
+    );
   }
 }
