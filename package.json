@@ -7,7 +7,7 @@
     "start": "npm run build:dev",
     "build:dev": "BABEL_ENV=dev webpack-dev-server --open --hot --config config/webpack.dev.js --mode development",
     "build:prod": "BABEL_ENV=prod webpack --config config/webpack.prod.js --mode production",
-    "lint:css": "stylelint './src/**/*.js'"
+    "lint:css": "stylelint './src/**/*.js' --config config/stylelint.js"
   },
   "repository": {
     "type": "git",
