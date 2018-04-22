@@ -2,9 +2,10 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const CompressionPlugin = require('compression-webpack-plugin');
 const baseConfig = require('./webpack.base');
 
-module.exports = () => (
+module.exports = (env = {}) => (
   merge(baseConfig(), {
     devtool: 'source-map',
     optimization: {
@@ -18,10 +19,13 @@ module.exports = () => (
       ]
     },
     plugins: [
-      new BundleAnalyzerPlugin(),
+      new BundleAnalyzerPlugin({
+        analyzerMode: env.analyze === 'true' ? 'server' : 'disabled'
+      }),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
-      })
+      }),
+      new CompressionPlugin()
     ]
   })
 );
