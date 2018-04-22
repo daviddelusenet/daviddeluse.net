@@ -9,6 +9,8 @@ export default () => (
       <Video
         autoPlay
         loop
+        muted
+        playsInline
         preload="auto"
         src="assets/video/fireplace.mp4"
       />
