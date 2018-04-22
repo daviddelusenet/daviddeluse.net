@@ -1,16 +1,8 @@
-// Import React stuff
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-// Import the application
 import App from './app/App';
-
-// Import the  base styles
 import initBaseStyles from './app/styles/base';
 
-// Initialize the base styles
+// Initialize the base styles and render the application
 initBaseStyles();
-
-// Render the application
-const root = document.getElementById('root');
-ReactDOM.render(<App />, root);
+ReactDOM.render(<App />, document.getElementById('root'));

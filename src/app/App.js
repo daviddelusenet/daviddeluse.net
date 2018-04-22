@@ -1,11 +1,7 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
-import Logo from './components/Logo/Logo';
+import HomePage from './pages/Home/Home';
 
-const App = () => (
-  <div>
-    <Logo />
-  </div>
-);
+const App = () => <HomePage />;
 
 export default hot(module)(App);
