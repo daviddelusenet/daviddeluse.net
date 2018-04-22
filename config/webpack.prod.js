@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const baseConfig = require('./webpack.base');
 
 module.exports = () => (
@@ -17,10 +18,9 @@ module.exports = () => (
       ]
     },
     plugins: [
+      new BundleAnalyzerPlugin(),
       new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify('production')
-        }
+        'process.env.NODE_ENV': JSON.stringify('production')
       })
     ]
   })
