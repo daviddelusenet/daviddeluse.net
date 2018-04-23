@@ -1,7 +1,7 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
-import HomePage from './pages/Home/Home';
+import Router from './Router';
 
-const App = () => <HomePage />;
+const App = () => <Router />;
 
 export default hot(module)(App);
