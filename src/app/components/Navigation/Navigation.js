@@ -18,7 +18,7 @@ export default () => (
       target="_blank">CV
     </Link>
     <Link
-      href="mailto:david@lusenet.nl">Email
+      href="mailto:me@daviddeluse.net">Email
     </Link>
   </Wrapper>
 );
