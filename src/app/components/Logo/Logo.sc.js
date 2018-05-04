@@ -6,7 +6,7 @@ export const Square = styled.div`
   width: 300px;
   height: 300px;
   margin: 0 auto;
-  border: 4px solid ${WHITE};
+  border: 2px solid ${WHITE};
 `;
 
 export const Circle = styled.div`
@@ -17,7 +17,7 @@ export const Circle = styled.div`
   width: 90%;
   height: 90%;
   z-index: 1;
-  border: 4px solid ${WHITE};
+  border: 2px solid ${WHITE};
   border-radius: 100%;
 `;
 

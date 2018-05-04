@@ -4,4 +4,4 @@ export const BLACK = '#000';
 export const WHITE = '#fff';
 
 // Font-families
-export const GILL_SANS = '"Gill Sans", "Gill Sans MT", Calibri, sans-serif';
+export const CALIBRI = 'Calibri, Candara, Segoe, "Segoe UI", Optima, Arial,sans-serif';

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { GILL_SANS, WHITE } from './../../utils/consts';
+import { CALIBRI, WHITE } from './../../utils/consts';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -11,12 +11,20 @@ export const Wrapper = styled.div`
 `;
 
 export const Link = styled.a`
-  width: 25%;
-  padding: 30px 20px;
+  padding: 30px 0;
   flex: 0 0 auto;
   text-align: center;
   text-decoration: none;
+  line-height: 1;
   color: ${WHITE};
-  font-family: ${GILL_SANS};
-  font-size: 18px;
+  font-family: ${CALIBRI};
+  font-size: 20px;
+`;
+
+export const Divider = styled.span`
+  padding: 0 5px;
+  flex: 0 0 auto;
+  line-height: 80px;
+  color: ${WHITE};
+  font-size: 30px;
 `;
