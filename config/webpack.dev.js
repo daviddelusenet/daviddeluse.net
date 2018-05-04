@@ -9,6 +9,7 @@ module.exports = () => (
     devServer: {
       contentBase: resolve(__dirname, './../dist'),
       hot: true,
+      open: true,
       publicPath: '/'
     },
     plugins: [
