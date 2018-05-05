@@ -10,10 +10,10 @@ module.exports = () => (
       contentBase: resolve(__dirname, './../dist'),
       hot: true,
       open: true,
-      publicPath: '/'
+      publicPath: '/',
     },
     plugins: [
-      new webpack.NamedModulesPlugin()
-    ]
+      new webpack.NamedModulesPlugin(),
+    ],
   })
 );

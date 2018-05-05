@@ -3,30 +3,30 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = () => ({
   entry: {
-    'daviddeluse.net': resolve(__dirname, './../src/index.js')
+    'daviddeluse.net': resolve(__dirname, './../src/index.js'),
   },
   output: {
     path: resolve(__dirname, './../dist'),
-    filename: '[name].min.js'
+    filename: '[name].min.js',
   },
   module: {
     rules: [
       {
         test: /\.html$/,
-        loader: 'html-loader'
+        loader: 'html-loader',
       },
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
-          loader: 'babel-loader'
-        }
-      }
-    ]
+          loader: 'babel-loader',
+        },
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: resolve(__dirname, './../src/templates/index.html')
-    })
-  ]
+      template: resolve(__dirname, './../src/templates/index.html'),
+    }),
+  ],
 });

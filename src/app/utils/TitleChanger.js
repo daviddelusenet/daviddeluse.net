@@ -21,16 +21,21 @@ export default class TitleChanger {
       'Strange world isn\'t it?',
       'Wubalubadubdub',
       'Literally no one cares',
-      'Be kind'
+      'Be kind',
+      'Blessed be the fruit',
+      'I\'m just anonymous',
     ];
   }
 
   addEventListeners() {
-    window.addEventListener('blur', () => this.changeTitle());
-    window.addEventListener('focus', () => this.changeTitle({ showOriginal: true }));
+    document.addEventListener('visibilitychange', () => this.changeTitle({ showOriginal: document.visibilityState === 'visible' }));
   }
 
-  changeTitle({ showOriginal = false } = {}) {
-    document.title = showOriginal ? this.originalTitle : this.titles[Math.floor(Math.random() * this.titles.length)];
+  changeTitle({ showOriginal }) {
+    document.title = showOriginal ? (
+      this.originalTitle
+    ) : (
+      this.titles[Math.floor(Math.random() * this.titles.length)]
+    );
   }
 }
