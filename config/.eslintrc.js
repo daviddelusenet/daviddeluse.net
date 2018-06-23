@@ -18,9 +18,6 @@ module.exports = {
       specialLink: ['to']
     }],
     'jsx-a11y/media-has-caption': 0,
-    'no-confusing-arrow': ['error', { allowParens: true }],
-    'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
-    'react/forbid-prop-types': 0,
     'react/jsx-filename-extension': 0,
   },
   globals: {
