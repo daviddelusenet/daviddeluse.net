@@ -3,11 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = () => ({
   entry: {
-    'daviddeluse.net': resolve(__dirname, './../src/index.js'),
+    'daviddeluse.net': ['babel-polyfill', resolve(__dirname, './../src/index.js')],
   },
   output: {
     path: resolve(__dirname, './../dist'),
-    filename: '[name].min.js',
+    filename: '[name].[hash].min.js',
   },
   module: {
     rules: [
