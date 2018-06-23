@@ -24,6 +24,7 @@ export default class TitleChanger {
       'Be kind',
       'Blessed be the fruit',
       'I\'m just anonymous',
+      'May the Lord open',
     ];
   }
 
