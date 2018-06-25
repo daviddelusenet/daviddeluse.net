@@ -30,7 +30,6 @@ module.exports = () => ({
   plugins: [
     new CleanWebpackPlugin([distPath], {
       allowExternal: true,
-      exclude: ['assets'],
     }),
     new CopyWebpackPlugin([
       {
