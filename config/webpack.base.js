@@ -1,13 +1,16 @@
 const { resolve } = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { distPath, publicPath } = require('./paths');
 
 module.exports = () => ({
   entry: {
-    'daviddeluse.net': resolve(__dirname, './../src/index.js'),
+    'daviddeluse.net': ['babel-polyfill', resolve(__dirname, './../src/index.js')],
   },
   output: {
-    path: resolve(__dirname, './../dist'),
-    filename: '[name].min.js',
+    path: distPath,
+    filename: '[name].[hash].min.js',
   },
   module: {
     rules: [
@@ -25,6 +28,16 @@ module.exports = () => ({
     ],
   },
   plugins: [
+    new CleanWebpackPlugin([distPath], {
+      allowExternal: true,
+      exclude: ['assets'],
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: publicPath,
+        to: distPath,
+      },
+    ]),
     new HtmlWebpackPlugin({
       template: resolve(__dirname, './../src/templates/index.html'),
     }),
