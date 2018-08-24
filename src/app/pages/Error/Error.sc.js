@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { WHITE } from '../../utils/consts';
-import linkHoverLine from '../../styles/mixins/linkHoverLine';
+import underline from '../../styles/mixins/underline';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -33,7 +33,7 @@ export const LinkToHome = styled(Link)`
   
   &:hover {
     span {
-      ${linkHoverLine({ bottom: '-2px' })};
+      ${underline({ bottom: '-2px' })};
     }
   }
 `;
