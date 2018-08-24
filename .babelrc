@@ -7,10 +7,10 @@
    }],
     "@babel/preset-react"
   ],
-  "plugins": ["babel-plugin-styled-components", "transform-class-properties"],
+  "plugins": ["transform-class-properties"],
   "env": {
     "dev": {
-      "plugins": ["react-hot-loader/babel"]
+      "plugins": ["babel-plugin-styled-components", "react-hot-loader/babel"]
     }
   }
 }
