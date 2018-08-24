@@ -21,6 +21,11 @@ module.exports = {
       specialLink: ['to']
     }],
     'jsx-a11y/media-has-caption': 0,
+    'max-len': ['error', {
+      code: 120,
+      ignoreTemplateLiterals: true,
+      tabWidth: 4,
+    }],
     'object-property-newline': ['error', {
       allowAllPropertiesOnSameLine: false,
     }],
