@@ -9,7 +9,6 @@ export default class TitleChanger {
     this.titles = [
       'Ain\'t nobody prayin\' for me',
       'Don\'t leave me here..',
-      'Donovan Mitchell is ROTY',
       'Be weird, it\'s ok',
       'Meanwhile..',
       'Keep the dream alive',
@@ -25,11 +24,22 @@ export default class TitleChanger {
       'Blessed be the fruit',
       'I\'m just anonymous',
       'May the Lord open',
+      'This a Rollie, not a stopwatch, shit don\'t ever stop',
+      'Juan in a million',
+      'I just wanna feel liberated',
+      'Ill nana',
+      'I ain\'t got time',
+      'Lovin\' me is complicated',
+      'If you don\'t know, now you know',
+      'I can\'t believe I made it',
+      'Now drop to your knees for the offerin\'',
     ];
   }
 
   addEventListeners() {
-    document.addEventListener('visibilitychange', () => this.changeTitle({ showOriginal: document.visibilityState === 'visible' }));
+    document.addEventListener('visibilitychange', () => {
+      this.changeTitle({ showOriginal: document.visibilityState === 'visible' });
+    });
   }
 
   changeTitle({ showOriginal }) {
