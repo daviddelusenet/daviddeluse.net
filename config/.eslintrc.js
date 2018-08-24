@@ -33,6 +33,9 @@ module.exports = {
     'react/jsx-max-props-per-line': ['error', {
       maximum: 3,
     }],
+    'react/jsx-one-expression-per-line': ['error', {
+      allow: 'none',
+    }],
     'react/jsx-sort-default-props': ['error', {
       ignoreCase: false,
     }],
