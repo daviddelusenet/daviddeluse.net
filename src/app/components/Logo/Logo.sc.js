@@ -5,6 +5,7 @@ export const Square = styled.div`
   position: relative;
   margin: 0 auto;
   border: 2px solid ${WHITE};
+  cursor: grab;
   width: 300px;
   height: 300px;
 `;
