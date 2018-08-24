@@ -34,7 +34,7 @@ module.exports = {
       maximum: 3,
     }],
     'react/jsx-one-expression-per-line': ['error', {
-      allow: 'none',
+      allow: 'literal',
     }],
     'react/jsx-sort-default-props': ['error', {
       ignoreCase: false,
