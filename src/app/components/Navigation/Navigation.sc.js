@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { CALIBRI, WHITE } from '../../utils/consts';
+import { WHITE } from '../../utils/consts';
+import linkHoverLine from '../../styles/mixins/linkHoverLine';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -19,21 +20,10 @@ export const Link = styled.a`
   text-decoration: none;
   line-height: 1;
   color: ${WHITE};
-  font-family: ${CALIBRI};
   font-size: 20px;
   
   &:hover {
-    &:after {
-      display: block;
-      position: absolute;
-      right: 4px;
-      bottom: 8px;
-      left: 4px;
-      background-color: ${WHITE};
-      width: auto;
-      height: 1px;
-      content: '';
-    }
+    ${linkHoverLine()};
   }
 `;
 

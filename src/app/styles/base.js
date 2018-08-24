@@ -2,7 +2,7 @@ import { injectGlobal } from 'styled-components';
 import reset from 'styled-reset';
 
 // Consts
-import { BLACK } from '../utils/consts';
+import { BLACK, CALIBRI } from '../utils/consts';
 
 export default () => injectGlobal`
   ${reset}
@@ -13,6 +13,7 @@ export default () => injectGlobal`
   
   html {
     background-color: ${BLACK};
+    font-family: ${CALIBRI};
   }
   
   body {

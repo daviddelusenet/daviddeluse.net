@@ -1,6 +1,8 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // Child Components
+import ErrorPage from './pages/Error/Error';
 import HomePage from './pages/Home/Home';
 
 // Utils
@@ -12,6 +14,13 @@ export default class Router extends React.PureComponent {
   }
 
   render() {
-    return <HomePage />;
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" render={() => <HomePage />} />
+          <Route component={ErrorPage} />
+        </Switch>
+      </BrowserRouter>
+    );
   }
 }
