@@ -8,6 +8,7 @@ module.exports = () => (
     devtool: 'inline-source-map',
     devServer: {
       contentBase: resolve(__dirname, './../dist'),
+      historyApiFallback: true,
       hot: true,
       open: true,
       publicPath: '/',
