@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { CALIBRI, WHITE } from './../../utils/consts';
+import { CALIBRI, WHITE } from '../../utils/consts';
 
 export const Wrapper = styled.div`
   display: flex;

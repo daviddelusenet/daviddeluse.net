@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { WHITE } from './../../utils/consts';
+import { WHITE } from '../../utils/consts';
 
 export const Square = styled.div`
   position: relative;

@@ -2,7 +2,7 @@ import { injectGlobal } from 'styled-components';
 import reset from 'styled-reset';
 
 // Consts
-import { BLACK } from './../utils/consts';
+import { BLACK } from '../utils/consts';
 
 export default () => injectGlobal`
   ${reset}

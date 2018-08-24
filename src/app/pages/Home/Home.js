@@ -1,8 +1,8 @@
 import React from 'react';
 
 // Child Components
-import Logo from './../../components/Logo/Logo';
-import Navigation from './../../components/Navigation/Navigation';
+import Logo from '../../components/Logo/Logo';
+import Navigation from '../../components/Navigation/Navigation';
 
 // Styled Components
 import Wrapper from './Home.sc';

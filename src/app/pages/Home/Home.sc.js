@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BLACK } from './../../utils/consts';
+import { BLACK } from '../../utils/consts';
 
 export default styled.div`
   display: flex;
