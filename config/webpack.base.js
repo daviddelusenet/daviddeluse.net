@@ -16,14 +16,12 @@ module.exports = () => ({
     rules: [
       {
         test: /\.html$/,
-        loader: 'html-loader',
+        use: 'html-loader',
       },
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader',
-        },
+        use: 'babel-loader',
       },
     ],
   },
