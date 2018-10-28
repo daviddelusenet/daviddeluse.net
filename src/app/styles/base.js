@@ -1,10 +1,10 @@
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
 // Consts
 import { BLACK, CALIBRI } from '../utils/consts';
 
-export default () => injectGlobal`
+export default createGlobalStyle`
   ${reset}
 
   * {

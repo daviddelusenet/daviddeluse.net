@@ -17,7 +17,7 @@ export default class Logo extends React.PureComponent {
 
   render() {
     return (
-      <Square innerRef={this.square}>
+      <Square ref={this.square}>
         <Circle>
           <Video
             autoPlay
