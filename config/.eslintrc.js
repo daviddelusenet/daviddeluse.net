@@ -24,7 +24,7 @@ module.exports = {
     'max-len': ['error', {
       code: 120,
       ignoreTemplateLiterals: true,
-      tabWidth: 4,
+      tabWidth: 2,
     }],
     'object-property-newline': ['error', {
       allowAllPropertiesOnSameLine: false,
@@ -58,6 +58,4 @@ module.exports = {
       natural: false,
     }],
   },
-  globals: {
-  }
 };
