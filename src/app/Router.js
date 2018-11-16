@@ -11,7 +11,7 @@ const Router = () => (
     <TitleChanger />
     <BrowserRouter>
       <Switch>
-        <Route component={<HomePage />} exact path="/" />
+        <Route component={HomePage} exact path="/" />
         <Route component={ErrorPage} />
       </Switch>
     </BrowserRouter>
