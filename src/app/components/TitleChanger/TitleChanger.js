@@ -1,5 +1,7 @@
-export default class TitleChanger {
-  constructor() {
+import React from 'react';
+
+export default class TitleChanger extends React.PureComponent {
+  componentDidMount() {
     this.setVariables();
     this.addEventListeners();
   }
@@ -52,5 +54,9 @@ export default class TitleChanger {
     ) : (
       this.titles[Math.floor(Math.random() * this.titles.length)]
     );
+  }
+
+  render() {
+    return null;
   }
 }

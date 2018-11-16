@@ -4,23 +4,18 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // Child Components
 import ErrorPage from './pages/Error/Error';
 import HomePage from './pages/Home/Home';
+import TitleChanger from './components/TitleChanger/TitleChanger';
 
-// Utils
-import TitleChanger from './utils/TitleChanger';
+const Router = () => (
+  <React.Fragment>
+    <TitleChanger />
+    <BrowserRouter>
+      <Switch>
+        <Route component={<HomePage />} exact path="/" />
+        <Route component={ErrorPage} />
+      </Switch>
+    </BrowserRouter>
+  </React.Fragment>
+);
 
-export default class Router extends React.PureComponent {
-  componentDidMount() {
-    this.titleChanger = new TitleChanger();
-  }
-
-  render() {
-    return (
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" render={() => <HomePage />} />
-          <Route component={ErrorPage} />
-        </Switch>
-      </BrowserRouter>
-    );
-  }
-}
+export default Router;
