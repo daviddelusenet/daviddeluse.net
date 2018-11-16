@@ -26,14 +26,11 @@ export const LinkToHome = styled(Link)`
   color: ${WHITE};
   font-size: 16px;
   font-weight: bold;
-  
-  span {
-    position: relative;
-  }
-  
+
   &:hover {
     span {
       ${underline({ bottom: '-2px' })};
+      position: relative;
     }
   }
 `;

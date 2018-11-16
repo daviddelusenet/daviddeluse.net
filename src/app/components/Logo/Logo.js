@@ -6,10 +6,10 @@ import '../../../libs/ThrowPropsPlugin';
 import { Circle, Square, Video } from './Logo.sc';
 
 export default class Logo extends React.PureComponent {
-  square = React.createRef();
+  squareRef = React.createRef();
 
   componentDidMount() {
-    Draggable.create(this.square.current, {
+    Draggable.create(this.squareRef.current, {
       throwProps: true,
       type: 'rotation',
     });
@@ -17,7 +17,7 @@ export default class Logo extends React.PureComponent {
 
   render() {
     return (
-      <Square ref={this.square}>
+      <Square ref={this.squareRef}>
         <Circle>
           <Video
             autoPlay
