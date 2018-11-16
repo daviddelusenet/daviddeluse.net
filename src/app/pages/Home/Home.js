@@ -1,15 +1,17 @@
 import React from 'react';
 
-// Child Components
+// Child components
 import Logo from '../../components/Logo/Logo';
 import Navigation from '../../components/Navigation/Navigation';
 
-// Styled Components
-import Wrapper from './Home.sc';
+// Styled components
+import StyledHomePage from './Home.sc';
 
-export default () => (
-  <Wrapper>
+const HomePage = () => (
+  <StyledHomePage>
     <Navigation />
     <Logo />
-  </Wrapper>
+  </StyledHomePage>
 );
+
+export default HomePage;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { WHITE } from '../../utils/consts';
 
-export const Square = styled.div`
+export const StyledLogo = styled.div`
   position: relative;
   margin: 0 auto;
   border: 2px solid ${WHITE};

@@ -2,25 +2,21 @@ import React from 'react';
 
 // Styled components
 import {
-  LinkToHome,
+  Link,
   Message,
-  Wrapper,
+  StyledErrorPage,
 } from './Error.sc';
 
 const ErrorPage = () => (
-  <Wrapper>
+  <StyledErrorPage>
     <Message>
       Oops, something went wrong
       <span aria-label="Scream" role="img"> 😱</span>
     </Message>
-    <LinkToHome to="/">
+    <Link to="/">
       <span>Go back home</span>
-    </LinkToHome>
-  </Wrapper>
+    </Link>
+  </StyledErrorPage>
 );
-
-ErrorPage.propTypes = {
-
-};
 
 export default ErrorPage;

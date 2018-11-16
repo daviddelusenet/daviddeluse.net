@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { WHITE } from '../../utils/consts';
 import underline from '../../styles/mixins/underline';
 
-export const Wrapper = styled.div`
+export const StyledNavigation = styled.div`
   display: flex;
   position: fixed;
   bottom: 0;

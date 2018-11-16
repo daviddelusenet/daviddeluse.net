@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import { WHITE } from '../../utils/consts';
 import underline from '../../styles/mixins/underline';
 
-export const Wrapper = styled.div`
+export const StyledErrorPage = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,7 +19,7 @@ export const Message = styled.p`
   font-size: 40px;
 `;
 
-export const LinkToHome = styled(Link)`
+export const Link = styled(RouterLink)`
   position: relative;
   text-transform: uppercase;
   text-decoration: none;

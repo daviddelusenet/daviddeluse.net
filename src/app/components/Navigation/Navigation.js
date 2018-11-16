@@ -1,10 +1,10 @@
 import React from 'react';
 
-// Styled Components
-import { Divider, Link, Wrapper } from './Navigation.sc';
+// Styled components
+import { Divider, Link, StyledNavigation } from './Navigation.sc';
 
-export default () => (
-  <Wrapper>
+const Navigation = () => (
+  <StyledNavigation>
     <Link href="https://github.com/daviddelusenet" target="_blank">Github</Link>
     <Divider>·</Divider>
     <Link href="https://www.linkedin.com/in/david-de-lusenet-31b838111/" target="_blank">LinkedIn</Link>
@@ -12,5 +12,7 @@ export default () => (
     <Link href="http://cv.lusenet.com/" target="_blank">CV</Link>
     <Divider>·</Divider>
     <Link href="mailto:me@daviddeluse.net">Email</Link>
-  </Wrapper>
+  </StyledNavigation>
 );
+
+export default Navigation;

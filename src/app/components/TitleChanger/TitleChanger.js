@@ -8,6 +8,7 @@ export default class TitleChanger extends React.PureComponent {
 
   setVariables() {
     this.originalTitle = document.title;
+
     this.titles = [
       'Ain\'t nobody prayin\' for me',
       'Be kind',
@@ -49,11 +50,7 @@ export default class TitleChanger extends React.PureComponent {
   }
 
   changeTitle({ showOriginal }) {
-    document.title = showOriginal ? (
-      this.originalTitle
-    ) : (
-      this.titles[Math.floor(Math.random() * this.titles.length)]
-    );
+    document.title = showOriginal ? this.originalTitle : this.titles[Math.floor(Math.random() * this.titles.length)];
   }
 
   render() {

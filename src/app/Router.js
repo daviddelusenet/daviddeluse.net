@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-// Child Components
+// Child components
 import ErrorPage from './pages/Error/Error';
 import HomePage from './pages/Home/Home';
 import TitleChanger from './components/TitleChanger/TitleChanger';
