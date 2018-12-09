@@ -17,7 +17,12 @@ export default createGlobalStyle`
   }
   
   body {
+    cursor: url('/assets/image/cursor-normal.png') 12 12, auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  
+  a {
+    cursor: url('/assets/image/cursor-hover.png') 12 12, auto;
   }
 `;

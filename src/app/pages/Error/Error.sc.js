@@ -21,6 +21,7 @@ export const Message = styled.p`
 
 export const Link = styled(RouterLink)`
   position: relative;
+  cursor: url('/assets/image/cursor-hover.png') 12 12, auto;
   text-transform: uppercase;
   text-decoration: none;
   color: ${WHITE};

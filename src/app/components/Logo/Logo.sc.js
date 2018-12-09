@@ -5,7 +5,7 @@ export const StyledLogo = styled.div`
   position: relative;
   margin: 0 auto;
   border: 2px solid ${WHITE};
-  cursor: grab;
+  cursor: url('/assets/image/cursor-hover.png') 12 12, auto;
   width: 300px;
   height: 300px;
 `;
