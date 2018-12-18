@@ -1,17 +1,30 @@
 import React from 'react';
 
 // Styled components
-import { Divider, Link, StyledNavigation } from './Navigation.sc';
+import {
+  Divider,
+  Link,
+  LinkInner,
+  StyledNavigation,
+} from './Navigation.sc';
 
 const Navigation = () => (
   <StyledNavigation>
-    <Link href="https://github.com/daviddelusenet" target="_blank">Github</Link>
+    <Link href="https://github.com/daviddelusenet" target="_blank">
+      <LinkInner>Github</LinkInner>
+    </Link>
     <Divider>·</Divider>
-    <Link href="https://www.linkedin.com/in/david-de-lusenet-31b838111/" target="_blank">LinkedIn</Link>
+    <Link href="https://www.linkedin.com/in/david-de-lusenet-31b838111/" target="_blank">
+      <LinkInner>LinkedIn</LinkInner>
+    </Link>
     <Divider>·</Divider>
-    <Link href="http://cv.lusenet.com/" target="_blank">CV</Link>
+    <Link href="http://cv.lusenet.com/" target="_blank">
+      <LinkInner>CV</LinkInner>
+    </Link>
     <Divider>·</Divider>
-    <Link href="mailto:me@daviddeluse.net">Email</Link>
+    <Link href="mailto:me@daviddeluse.net">
+      <LinkInner>Email</LinkInner>
+    </Link>
   </StyledNavigation>
 );
 

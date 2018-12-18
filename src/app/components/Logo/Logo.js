@@ -31,7 +31,7 @@ export default class Logo extends React.PureComponent {
               muted
               playsInline
               preload="auto"
-              src="assets/video/fireplace.mp4"
+              src="/assets/video/fireplace.mp4"
             />
           </Circle>
         </Square>
