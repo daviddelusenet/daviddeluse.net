@@ -26,4 +26,10 @@ export default createGlobalStyle`
   a {
     ${cursorHover()};
   }
+  
+  button { 
+    ${cursorHover()};
+    font-family: ${CALIBRI};
+    outline: none;
+  }
 `;
