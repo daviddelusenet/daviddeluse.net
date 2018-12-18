@@ -1,11 +1,20 @@
 import styled from 'styled-components';
 import { WHITE } from '../../utils/consts';
+import cursorHover from '../../styles/mixins/cursorHover';
 
 export const StyledLogo = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  min-height: 500px;
+`;
+
+export const Square = styled.div`
+  ${cursorHover()};
   position: relative;
-  margin: 0 auto;
   border: 2px solid ${WHITE};
-  cursor: url('/assets/image/cursor-hover.png') 12 12, auto;
   width: 300px;
   height: 300px;
 `;

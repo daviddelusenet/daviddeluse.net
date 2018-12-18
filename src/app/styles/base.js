@@ -3,6 +3,7 @@ import reset from 'styled-reset';
 
 // Consts
 import { BLACK, CALIBRI } from '../utils/consts';
+import cursorHover from './mixins/cursorHover';
 
 export default createGlobalStyle`
   ${reset}
@@ -23,6 +24,6 @@ export default createGlobalStyle`
   }
   
   a {
-    cursor: url('/assets/image/cursor-hover.png') 12 12, auto;
+    ${cursorHover()};
   }
 `;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link as RouterLink } from 'react-router-dom';
 import { WHITE } from '../../utils/consts';
+import cursorHover from '../../styles/mixins/cursorHover';
 import underline from '../../styles/mixins/underline';
 
 export const StyledErrorPage = styled.div`
@@ -20,8 +21,8 @@ export const Message = styled.p`
 `;
 
 export const Link = styled(RouterLink)`
+  ${cursorHover()};
   position: relative;
-  cursor: url('/assets/image/cursor-hover.png') 12 12, auto;
   text-transform: uppercase;
   text-decoration: none;
   color: ${WHITE};

@@ -3,13 +3,18 @@ import { Draggable } from 'gsap/all';
 import '../../../libs/ThrowPropsPlugin';
 
 // Styled components
-import { Circle, StyledLogo, Video } from './Logo.sc';
+import {
+  Circle,
+  Square,
+  StyledLogo,
+  Video,
+} from './Logo.sc';
 
 export default class Logo extends React.PureComponent {
-  styledLogoRef = React.createRef();
+  squareRef = React.createRef();
 
   componentDidMount() {
-    Draggable.create(this.styledLogoRef.current, {
+    Draggable.create(this.squareRef.current, {
       throwProps: true,
       type: 'rotation',
     });
@@ -17,17 +22,19 @@ export default class Logo extends React.PureComponent {
 
   render() {
     return (
-      <StyledLogo ref={this.styledLogoRef}>
-        <Circle>
-          <Video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            src="assets/video/fireplace.mp4"
-          />
-        </Circle>
+      <StyledLogo>
+        <Square ref={this.squareRef}>
+          <Circle>
+            <Video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              src="assets/video/fireplace.mp4"
+            />
+          </Circle>
+        </Square>
       </StyledLogo>
     );
   }
