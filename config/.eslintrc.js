@@ -58,4 +58,8 @@ module.exports = {
       natural: false,
     }],
   },
+  globals: {
+    Power1: true,
+    Power3: true,
+  },
 };
