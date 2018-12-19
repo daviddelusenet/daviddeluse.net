@@ -48,11 +48,11 @@ export default class TitleChanger extends React.PureComponent {
 
   addEventListeners() {
     document.addEventListener('visibilitychange', () => {
-      this.changeTitle({ showOriginal: document.visibilityState === 'visible' });
+      this.handleOnChangeTitle({ showOriginal: document.visibilityState === 'visible' });
     });
   }
 
-  changeTitle({ showOriginal }) {
+  handleOnChangeTitle({ showOriginal }) {
     document.title = showOriginal ? this.originalTitle : this.titles[Math.floor(Math.random() * this.titles.length)];
   }
 

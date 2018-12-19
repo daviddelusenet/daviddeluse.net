@@ -1,11 +1,15 @@
 import styled from 'styled-components';
-import { WHITE } from '../../utils/consts';
+import { BLACK, WHITE } from '../../utils/consts';
 
 export default styled.button`
+  border: 0;
   background: none;
+  padding: 0;
   line-height: 1;
   color: ${WHITE};
-  font-size: 20px;
-  border: 0;
-  padding: 0;
+  font-size: 18px;
+  
+  .is-inverted & {
+    color: ${BLACK};
+  }
 `;

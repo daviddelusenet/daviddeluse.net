@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { WHITE } from '../../utils/consts';
+import { BLACK, WHITE } from '../../utils/consts';
 
 export default ({ bottom = '8px' } = {}) => (css`
   &:after {
@@ -12,5 +12,9 @@ export default ({ bottom = '8px' } = {}) => (css`
     width: auto;
     height: 1px;
     content: '';
+    
+    .is-inverted & {
+      background-color: ${BLACK};
+    }
   }
 `);

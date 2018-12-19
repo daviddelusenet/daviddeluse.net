@@ -21,4 +21,9 @@ export const Circle = styled.div`
   background-color: ${BLACK};
   width: 12px;
   height: 12px;
+  
+  .is-inverted & {
+    border-color: ${BLACK};
+    background-color: ${WHITE};
+  }
 `;

@@ -5,6 +5,7 @@ import '../../../libs/ThrowPropsPlugin';
 // Styled components
 import {
   Circle,
+  Image,
   Square,
   StyledLogo,
   Video,
@@ -33,6 +34,7 @@ export default class Logo extends React.PureComponent {
               preload="auto"
               src="/assets/video/fireplace.mp4"
             />
+            <Image src="/assets/image/ice.jpg" />
           </Circle>
         </Square>
       </StyledLogo>

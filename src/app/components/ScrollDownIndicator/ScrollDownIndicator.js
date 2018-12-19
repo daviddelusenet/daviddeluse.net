@@ -23,7 +23,7 @@ export default class ScrollDownIndicator extends React.PureComponent {
     this.initScrollDownAnimation();
   }
 
-  scrollDown = () => {
+  handleOnScrollDown = () => {
     window.scrollTo({
       behavior: 'smooth',
       left: 0,
@@ -59,7 +59,7 @@ export default class ScrollDownIndicator extends React.PureComponent {
 
   render() {
     return (
-      <StyledScrollDownIndicator onClick={this.scrollDown}>
+      <StyledScrollDownIndicator onClick={this.handleOnScrollDown}>
         <Circle ref={this.circleOneRef} />
         <Circle ref={this.circleTwoRef} />
         <Circle ref={this.circleThreeRef} />

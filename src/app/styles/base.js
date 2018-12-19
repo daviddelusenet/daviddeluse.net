@@ -21,6 +21,10 @@ export default createGlobalStyle`
     cursor: url('/assets/image/cursor-normal.png') 12 12, auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    
+    &.is-inverted {
+      cursor: url('/assets/image/cursor-normal-inverted.png') 12 12, auto;
+    }
   }
   
   a {
@@ -29,7 +33,7 @@ export default createGlobalStyle`
   
   button { 
     ${cursorHover()};
-    font-family: ${CALIBRI};
     outline: none;
+    font-family: ${CALIBRI};
   }
 `;
