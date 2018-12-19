@@ -25,10 +25,3 @@ export const LinkInner = styled.span`
     ${underline({ bottom: '0px' })};
   }
 `;
-
-export const Divider = styled.span`
-  display: block;
-  line-height: 30px;
-  color: ${WHITE};
-  font-size: 30px;
-`;

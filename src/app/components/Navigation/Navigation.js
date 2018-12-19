@@ -2,11 +2,13 @@ import React from 'react';
 
 // Styled components
 import {
-  Divider,
   Link,
   LinkInner,
   StyledNavigation,
 } from './Navigation.sc';
+
+// Child components
+import Divider from '../Divider/Divider';
 
 const Navigation = () => (
   <StyledNavigation>

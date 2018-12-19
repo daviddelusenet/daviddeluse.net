@@ -1,7 +1,7 @@
 import React from 'react';
 
-// Styled components
-import { Button, StyledAudioPlayer } from './AudioPlayer.sc';
+// Child components
+import Button from '../Button/Button';
 
 export default class AudioPlayer extends React.PureComponent {
   audioRef = React.createRef();
@@ -22,14 +22,14 @@ export default class AudioPlayer extends React.PureComponent {
   handleKeyPress = (event) => {
     if (event.keyCode === 109) {
       // When 'M' is pressed
-      this.toggleAudioVolume();
+      this.handleOnAudioToggleVolume();
     } else if (event.keyCode === 112) {
       // When 'P' is pressed
-      this.playAudio();
+      this.handleOnPlayAudio();
     }
   };
 
-  playAudio = () => {
+  handleOnPlayAudio = () => {
     this.audioRef.current.play()
       .then(() => {
         this.setState({
@@ -38,7 +38,7 @@ export default class AudioPlayer extends React.PureComponent {
       });
   };
 
-  toggleAudioVolume = () => {
+  handleOnAudioToggleVolume = () => {
     const { isMuted } = this.state;
 
     this.audioRef.current.volume = isMuted ? 1 : 0;
@@ -60,20 +60,20 @@ export default class AudioPlayer extends React.PureComponent {
     const { isMuted, isStarted } = this.state;
 
     return (
-      <StyledAudioPlayer>
+      <React.Fragment>
         {isStarted ? (
-          <Button onClick={this.toggleAudioVolume}>
-            [m]
+          <Button onClick={this.handleOnAudioToggleVolume}>
+            [ M ]
             {' '}
             {isMuted ? 'Unmute' : 'Mute'}
           </Button>
         ) : (
-          <Button onClick={this.playAudio}>[p] Play</Button>
+          <Button onClick={this.handleOnPlayAudio}>[ P ] Play</Button>
         )}
         <audio autoPlay loop ref={this.audioRef}>
           <source src="/assets/sound/sleepwalker.mp3" type="audio/mpeg" />
         </audio>
-      </StyledAudioPlayer>
+      </React.Fragment>
     );
   }
 }
