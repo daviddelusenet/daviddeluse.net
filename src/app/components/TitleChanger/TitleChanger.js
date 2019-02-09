@@ -6,6 +6,10 @@ export default class TitleChanger extends React.PureComponent {
     this.addEventListeners();
   }
 
+  componentWillUnmount() {
+    this.removeEventListeners();
+  }
+
   setVariables() {
     this.originalTitle = document.title;
 
@@ -46,14 +50,17 @@ export default class TitleChanger extends React.PureComponent {
     ];
   }
 
+  handleChangeTitle = () => {
+    document.title = document.visibilityState === 'visible'
+      ? this.originalTitle : this.titles[Math.floor(Math.random() * this.titles.length)];
+  };
+
   addEventListeners() {
-    document.addEventListener('visibilitychange', () => {
-      this.handleOnChangeTitle({ showOriginal: document.visibilityState === 'visible' });
-    });
+    document.addEventListener('visibilitychange', this.handleChangeTitle);
   }
 
-  handleOnChangeTitle({ showOriginal }) {
-    document.title = showOriginal ? this.originalTitle : this.titles[Math.floor(Math.random() * this.titles.length)];
+  removeEventListeners() {
+    document.removeEventListener('visibilitychange', this.handleChangeTitle);
   }
 
   render() {
