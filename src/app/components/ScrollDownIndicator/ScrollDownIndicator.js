@@ -1,13 +1,6 @@
+import { Circle, StyledScrollDownIndicator } from './ScrollDownIndicator.sc';
 import React from 'react';
 import { TimelineLite } from 'gsap/TimelineLite';
-
-// Styled components
-import {
-  Circle,
-  StyledScrollDownIndicator,
-} from './ScrollDownIndicator.sc';
-
-// Consts
 import { WHITE } from '../../utils/consts';
 
 export default class ScrollDownIndicator extends React.PureComponent {

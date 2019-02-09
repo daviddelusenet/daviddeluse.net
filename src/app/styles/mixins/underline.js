@@ -1,5 +1,5 @@
-import { css } from 'styled-components';
 import { BLACK, WHITE } from '../../utils/consts';
+import { css } from 'styled-components';
 
 export default ({ bottom = '8px' } = {}) => (css`
   &:after {

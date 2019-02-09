@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import { Link as RouterLink } from 'react-router-dom';
-import { WHITE } from '../../utils/consts';
 import cursorHover from '../../styles/mixins/cursorHover';
+import { Link as RouterLink } from 'react-router-dom';
+import styled from 'styled-components';
 import underline from '../../styles/mixins/underline';
+import { WHITE } from '../../utils/consts';
 
 export const StyledErrorPage = styled.div`
   display: flex;

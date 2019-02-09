@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { BLACK, WHITE } from '../../utils/consts';
+import styled from 'styled-components';
 import underline from '../../styles/mixins/underline';
 
 export const StyledNavigation = styled.div`

@@ -1,14 +1,6 @@
-import React from 'react';
-
-// Styled components
-import {
-  Link,
-  LinkInner,
-  StyledNavigation,
-} from './Navigation.sc';
-
-// Child components
+import { Link, LinkInner, StyledNavigation } from './Navigation.sc';
 import Divider from '../Divider/Divider';
+import React from 'react';
 
 const Navigation = () => (
   <StyledNavigation>

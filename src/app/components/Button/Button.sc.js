@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { BLACK, WHITE } from '../../utils/consts';
+import styled from 'styled-components';
 
 export default styled.button`
   border: 0;

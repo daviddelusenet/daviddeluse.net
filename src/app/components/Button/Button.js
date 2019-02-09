@@ -1,7 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
-// Styled components
+import React from 'react';
 import StyledButton from './Button.sc';
 
 const Button = ({ children, onClick }) => (

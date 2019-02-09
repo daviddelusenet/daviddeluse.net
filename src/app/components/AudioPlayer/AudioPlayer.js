@@ -1,7 +1,5 @@
-import React from 'react';
-
-// Child components
 import Button from '../Button/Button';
+import React from 'react';
 
 export default class AudioPlayer extends React.PureComponent {
   audioRef = React.createRef();

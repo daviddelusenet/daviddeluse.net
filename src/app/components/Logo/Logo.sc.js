@@ -1,6 +1,6 @@
-import styled from 'styled-components';
 import { BLACK, WHITE } from '../../utils/consts';
 import cursorHover from '../../styles/mixins/cursorHover';
+import styled from 'styled-components';
 
 export const StyledLogo = styled.div`
   display: flex;

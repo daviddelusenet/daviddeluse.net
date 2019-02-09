@@ -1,8 +1,4 @@
-import React from 'react';
-import { Draggable } from 'gsap/all';
 import '../../../libs/ThrowPropsPlugin';
-
-// Styled components
 import {
   Circle,
   Image,
@@ -10,6 +6,8 @@ import {
   StyledLogo,
   Video,
 } from './Logo.sc';
+import { Draggable } from 'gsap/all';
+import React from 'react';
 
 export default class Logo extends React.PureComponent {
   squareRef = React.createRef();

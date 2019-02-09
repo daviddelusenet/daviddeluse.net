@@ -1,11 +1,5 @@
+import { Link, Message, StyledErrorPage } from './Error.sc';
 import React from 'react';
-
-// Styled components
-import {
-  Link,
-  Message,
-  StyledErrorPage,
-} from './Error.sc';
 
 const ErrorPage = () => (
   <StyledErrorPage>
