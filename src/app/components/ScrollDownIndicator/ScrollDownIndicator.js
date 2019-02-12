@@ -1,9 +1,11 @@
+import { BLACK, WHITE } from '../../utils/consts';
 import { Circle, StyledScrollDownIndicator } from './ScrollDownIndicator.sc';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { TimelineLite } from 'gsap/TimelineLite';
-import { WHITE } from '../../utils/consts';
 
-export default class ScrollDownIndicator extends React.PureComponent {
+class ScrollDownIndicator extends React.PureComponent {
   circleOneRef = React.createRef();
 
   circleTwoRef = React.createRef();
@@ -12,8 +14,12 @@ export default class ScrollDownIndicator extends React.PureComponent {
 
   circleFourRef = React.createRef();
 
+  static propTypes = {
+    isInverted: PropTypes.bool.isRequired,
+  };
+
   componentDidMount() {
-    this.initScrollDownAnimation();
+    this.playScrollDownAnimation();
   }
 
   handleScrollDown = () => {
@@ -24,8 +30,22 @@ export default class ScrollDownIndicator extends React.PureComponent {
     });
   };
 
-  initScrollDownAnimation() {
-    this.scrollDownAnimationTimeline = new TimelineLite()
+  playScrollDownAnimation() {
+    const { isInverted } = this.props;
+
+    new TimelineLite({
+      onComplete: () => {
+        this.playScrollDownAnimation();
+      },
+    })
+      .set(this.circleFourRef.current, {
+        backgroundColor: isInverted ? WHITE : BLACK,
+        height: 12,
+        width: 12,
+      })
+      .set([this.circleTwoRef.current, this.circleThreeRef.current, this.circleFourRef.current], {
+        y: 0,
+      })
       .to([this.circleTwoRef.current, this.circleThreeRef.current, this.circleFourRef.current], 0.5, {
         ease: Power1.easeOut,
         y: 20,
@@ -39,15 +59,12 @@ export default class ScrollDownIndicator extends React.PureComponent {
         y: 66,
       })
       .to(this.circleFourRef.current, 0.5, {
-        backgroundColor: WHITE,
+        backgroundColor: isInverted ? BLACK : WHITE,
         ease: Power3.easeOut,
         height: 24,
         width: 24,
         y: 60,
-      })
-      .add(() => {
-        this.scrollDownAnimationTimeline.restart();
-      }, '+=0.6');
+      });
   }
 
   render() {
@@ -61,3 +78,10 @@ export default class ScrollDownIndicator extends React.PureComponent {
     );
   }
 }
+
+
+const mapStateToProps = ({ buttonInvert: { isInverted } }) => ({
+  isInverted,
+});
+
+export default connect(mapStateToProps, null)(ScrollDownIndicator);
