@@ -53,7 +53,7 @@ export default class AudioPlayer extends React.PureComponent {
         <Button onClick={this.handleToggleAudioPlayback}>
           {`[ P ] ${isPlaying ? 'Pause' : 'Play'}`}
         </Button>
-        <audio autoPlay loop ref={this.audioRef}>
+        <audio loop ref={this.audioRef}>
           <source src="/assets/sound/sleepwalker.mp3" type="audio/mpeg" />
         </audio>
       </React.Fragment>
