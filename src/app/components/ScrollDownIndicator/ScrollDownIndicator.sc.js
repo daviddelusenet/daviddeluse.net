@@ -7,9 +7,10 @@ export const StyledScrollDownIndicator = styled.div`
   display: flex;
   position: absolute;
   top: calc(100vh - 114px);
-  left: calc(50% - 12px);
+  left: calc(50% - 25px);
   justify-content: center;
-  width: 24px;
+  z-index: 2;
+  width: 50px;
   height: 84px;
 `;
 
