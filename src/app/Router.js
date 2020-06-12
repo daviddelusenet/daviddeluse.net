@@ -5,7 +5,7 @@ import React from 'react';
 import TitleChanger from './components/TitleChanger/TitleChanger';
 
 const Router = () => (
-  <React.Fragment>
+  <>
     <TitleChanger />
     <BrowserRouter>
       <Switch>
@@ -13,7 +13,7 @@ const Router = () => (
         <Route component={ErrorPage} />
       </Switch>
     </BrowserRouter>
-  </React.Fragment>
+  </>
 );
 
 export default Router;

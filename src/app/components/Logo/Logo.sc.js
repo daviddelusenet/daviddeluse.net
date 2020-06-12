@@ -1,5 +1,4 @@
 import { BLACK, WHITE } from '../../utils/consts';
-import cursorHover from '../../styles/mixins/cursorHover';
 import styled from 'styled-components';
 
 export const StyledLogo = styled.div`
@@ -14,12 +13,11 @@ export const StyledLogo = styled.div`
 `;
 
 export const Square = styled.div`
-  ${cursorHover()};
   position: relative;
   border: 2px solid ${WHITE};
   width: 300px;
   height: 300px;
-  
+
   .is-inverted & {
     border-color: ${BLACK};
   }
@@ -35,7 +33,7 @@ export const Circle = styled.div`
   width: 90%;
   height: 90%;
   overflow: hidden;
-  
+
   .is-inverted & {
     border-color: ${BLACK};
   }
@@ -50,7 +48,7 @@ export const Video = styled.video`
   z-index: -1;
   width: auto;
   height: 105%;
-  
+
   .is-inverted & {
     display: none;
   }

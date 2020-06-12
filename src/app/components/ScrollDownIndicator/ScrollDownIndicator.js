@@ -3,7 +3,7 @@ import { Circle, StyledScrollDownIndicator } from './ScrollDownIndicator.sc';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { TimelineLite } from 'gsap/TimelineLite';
+import { gsap } from 'gsap';
 
 class ScrollDownIndicator extends React.PureComponent {
   circleOneRef = React.createRef();
@@ -32,12 +32,13 @@ class ScrollDownIndicator extends React.PureComponent {
 
   playScrollDownAnimation() {
     const { isInverted } = this.props;
-
-    new TimelineLite({
+    const tl = gsap.timeline({
       onComplete: () => {
         this.playScrollDownAnimation();
-      },
-    })
+      }
+    });
+
+    tl
       .set(this.circleFourRef.current, {
         backgroundColor: isInverted ? WHITE : BLACK,
         height: 12,
@@ -47,20 +48,20 @@ class ScrollDownIndicator extends React.PureComponent {
         y: 0,
       })
       .to([this.circleTwoRef.current, this.circleThreeRef.current, this.circleFourRef.current], 0.5, {
-        ease: Power1.easeOut,
+        ease: 'power1.easeOut',
         y: 20,
       })
       .to([this.circleThreeRef.current, this.circleFourRef.current], 0.5, {
-        ease: Power1.easeOut,
+        ease: 'power1.easeOut',
         y: 40,
       })
       .to(this.circleFourRef.current, 0.5, {
-        ease: Power1.easeOut,
+        ease: 'power1.easeOut',
         y: 66,
       })
       .to(this.circleFourRef.current, 0.5, {
         backgroundColor: isInverted ? BLACK : WHITE,
-        ease: Power3.easeOut,
+        ease: 'power3.easeOut',
         height: 24,
         width: 24,
         y: 60,
