@@ -31,7 +31,6 @@
   "homepage": "http://daviddeluse.net",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "classnames": "^2.2.6",
     "core-js": "^3.6.5",
     "gsap": "^3.3.1",
     "prop-types": "^15.7.2",
