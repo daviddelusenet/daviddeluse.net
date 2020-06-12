@@ -6,7 +6,7 @@ const { distPath, publicPath } = require('./paths');
 
 module.exports = () => ({
   entry: {
-    'daviddeluse.net': ['babel-polyfill', resolve(__dirname, './../src/index.js')],
+    'daviddeluse.net': resolve(__dirname, './../src/index.js'),
   },
   output: {
     path: distPath,
