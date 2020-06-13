@@ -1,34 +1,31 @@
-import { bindActionCreators } from 'redux';
+import React, { useCallback, useEffect } from 'react';
 import Button from '../Button/Button';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import React from 'react';
 import { toggleInvert } from '../../state/actionCreators/buttonInvertActionCreators';
+import { useDispatch } from 'react-redux';
 
-class ButtonInvert extends React.PureComponent {
-    static propTypes = {
-        actions: PropTypes.shape({
-            toggleInvert: PropTypes.func.isRequired,
-        }).isRequired,
-    };
+const ButtonInvert = () => {
+    const dispatch = useDispatch();
 
-    handleToggleInvert = () => {
-        const { actions } = this.props;
-        actions.toggleInvert();
-    };
+    const onToggleInvertCallback = useCallback(() => {
+        dispatch(toggleInvert());
+    }, []);
 
-    render() {
-        return <Button onClick={this.handleToggleInvert}>{'[ I ] Invert'}</Button>;
-    }
-}
-
-const mapDispatchToProps = (dispatch) => ({
-    actions: bindActionCreators(
-        {
-            toggleInvert,
+    const onKeyPressCallback = useCallback(
+        (event) => {
+            if (event.key === 'i' || event.keyCode === 105) {
+                onToggleInvertCallback();
+            }
         },
-        dispatch
-    ),
-});
+        [onToggleInvertCallback]
+    );
 
-export default connect(null, mapDispatchToProps)(ButtonInvert);
+    useEffect(() => {
+        window.addEventListener('keypress', onKeyPressCallback);
+
+        return () => window.removeEventListener('keypress', onKeyPressCallback);
+    }, [onKeyPressCallback]);
+
+    return <Button onClick={onToggleInvertCallback}>{'[ I ] Invert'}</Button>;
+};
+
+export default ButtonInvert;

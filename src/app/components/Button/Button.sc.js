@@ -1,7 +1,7 @@
 import { BLACK, WHITE } from '../../utils/consts';
 import styled from 'styled-components';
 
-export default styled.button`
+export const StyledButton = styled.button`
     border: 0;
     background: none;
     padding: 0;
@@ -13,3 +13,5 @@ export default styled.button`
         color: ${BLACK};
     }
 `;
+
+export default StyledButton;

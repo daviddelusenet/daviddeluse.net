@@ -1,54 +1,39 @@
-import React from 'react';
+import { useCallback, useEffect } from 'react';
 
-export default class TitleChanger extends React.PureComponent {
-    componentDidMount() {
-        this.setVariables();
-        this.addEventListeners();
-    }
+const originalTitle = document.title;
 
-    componentWillUnmount() {
-        this.removeEventListeners();
-    }
+const titles = [
+    "Ain't nobody prayin' for me",
+    'Anonymous',
+    'Be humble',
+    'Be kind',
+    "Be weird, it's ok",
+    "Don't be afraid to dream big",
+    "Don't leave me here",
+    'Good vibes only',
+    "If you don't know, now you know",
+    'Keep the dream alive',
+    'Meanwhile..',
+    'Spoiler, you die in the end',
+    'Stay cozy',
+    "Strange world isn't it?",
+    "We gon' be alright",
+    'We offer you the finest of the finer things',
+];
 
-    setVariables() {
-        this.originalTitle = document.title;
-
-        this.titles = [
-            "Ain't nobody prayin' for me",
-            'Anonymous',
-            'Be humble',
-            'Be kind',
-            "Be weird, it's ok",
-            "Don't be afraid to dream big",
-            "Don't leave me here",
-            'Good vibes only',
-            "If you don't know, now you know",
-            'Keep the dream alive',
-            'Meanwhile..',
-            'Spoiler, you die in the end',
-            'Stay cozy',
-            "Strange world isn't it?",
-            "We gon' be alright",
-            'We offer you the finest of the finer things',
-        ];
-    }
-
-    handleChangeTitle = () => {
+const TitleChanger = () => {
+    const onChangeTitleCallback = useCallback(() => {
         document.title =
-            document.visibilityState === 'visible'
-                ? this.originalTitle
-                : this.titles[Math.floor(Math.random() * this.titles.length)];
-    };
+            document.visibilityState === 'visible' ? originalTitle : titles[Math.floor(Math.random() * titles.length)];
+    }, []);
 
-    addEventListeners() {
-        document.addEventListener('visibilitychange', this.handleChangeTitle);
-    }
+    useEffect(() => {
+        document.addEventListener('visibilitychange', onChangeTitleCallback);
 
-    removeEventListeners() {
-        document.removeEventListener('visibilitychange', this.handleChangeTitle);
-    }
+        return () => document.removeEventListener('visibilitychange', onChangeTitleCallback);
+    }, []);
 
-    render() {
-        return null;
-    }
-}
+    return null;
+};
+
+export default TitleChanger;

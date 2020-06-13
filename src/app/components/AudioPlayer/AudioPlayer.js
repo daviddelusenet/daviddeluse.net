@@ -1,59 +1,43 @@
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Button from '../Button/Button';
-import React from 'react';
 
-export default class AudioPlayer extends React.PureComponent {
-    audioRef = React.createRef();
+const AudioPlayer = () => {
+    const audioRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
 
-    state = {
-        isPlaying: false,
-    };
-
-    componentDidMount() {
-        this.addEventListeners();
-    }
-
-    componentWillUnmount() {
-        this.removeEventListeners();
-    }
-
-    handleKeyPress = (event) => {
-        if (event.keyCode === 112) {
-            this.handleToggleAudioPlayback();
-        }
-    };
-
-    handleToggleAudioPlayback = () => {
-        const { isPlaying } = this.state;
-
-        this.audioRef.current.play().then(() => {
+    const onToggleAudioPlaybackCallback = useCallback(() => {
+        audioRef.current.play().then(() => {
             if (isPlaying) {
-                this.audioRef.current.pause();
+                audioRef.current.pause();
             }
 
-            this.setState({
-                isPlaying: !isPlaying,
-            });
+            setIsPlaying(!isPlaying);
         });
-    };
+    }, [audioRef, isPlaying]);
 
-    addEventListeners() {
-        window.addEventListener('keypress', this.handleKeyPress);
-    }
+    const onKeyPressCallback = useCallback(
+        (event) => {
+            if (event.key === 'p' || event.keyCode === 112) {
+                onToggleAudioPlaybackCallback();
+            }
+        },
+        [onToggleAudioPlaybackCallback]
+    );
 
-    removeEventListeners() {
-        window.removeEventListener('keypress', this.handleKeyPress);
-    }
+    useEffect(() => {
+        window.addEventListener('keypress', onKeyPressCallback);
 
-    render() {
-        const { isPlaying } = this.state;
+        return () => window.removeEventListener('keypress', onKeyPressCallback);
+    }, [onKeyPressCallback]);
 
-        return (
-            <>
-                <Button onClick={this.handleToggleAudioPlayback}>{`[ P ] ${isPlaying ? 'Pause' : 'Play'}`}</Button>
-                <audio loop ref={this.audioRef}>
-                    <source src="/assets/sound/sleepwalker.mp3" type="audio/mpeg" />
-                </audio>
-            </>
-        );
-    }
-}
+    return (
+        <>
+            <Button onClick={onToggleAudioPlaybackCallback}>{`[ P ] ${isPlaying ? 'Pause' : 'Play'}`}</Button>
+            <audio loop ref={audioRef}>
+                <source src="/assets/sound/sleepwalker.mp3" type="audio/mpeg" />
+            </audio>
+        </>
+    );
+};
+
+export default AudioPlayer;

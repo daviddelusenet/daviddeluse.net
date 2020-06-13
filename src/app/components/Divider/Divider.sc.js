@@ -1,7 +1,7 @@
 import { BLACK, WHITE } from '../../utils/consts';
 import styled from 'styled-components';
 
-export default styled.p`
+export const StyledDivider = styled.p`
     line-height: 30px;
     color: ${WHITE};
     font-size: 30px;
@@ -10,3 +10,5 @@ export default styled.p`
         color: ${BLACK};
     }
 `;
+
+export default StyledDivider;
