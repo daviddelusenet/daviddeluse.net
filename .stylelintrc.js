@@ -1,8 +1,10 @@
 module.exports = {
+    plugins: ['stylelint-prettier'],
     extends: [
         'stylelint-config-recommended',
         'stylelint-config-styled-components',
         'stylelint-config-concentric-order',
+        'stylelint-config-prettier',
     ],
     rules: {
         'block-closing-brace-newline-after': 'always',
@@ -33,6 +35,7 @@ module.exports = {
         'length-zero-no-unit': true,
         'max-empty-lines': 1,
         'no-duplicate-selectors': null,
+        'prettier/prettier': true,
         'rule-empty-line-before': ['always', {
             except: ['after-single-line-comment', 'first-nested']
         }],
