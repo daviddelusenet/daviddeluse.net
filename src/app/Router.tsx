@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React, { FunctionComponent } from 'react';
 import ErrorPage from './pages/Error/Error';
 import HomePage from './pages/Home/Home';
-import React from 'react';
 import TitleChanger from './components/TitleChanger/TitleChanger';
 
-const Router = () => (
+const Router: FunctionComponent = () => (
     <>
         <TitleChanger />
         <BrowserRouter>

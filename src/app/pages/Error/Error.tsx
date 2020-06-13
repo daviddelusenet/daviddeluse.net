@@ -1,7 +1,7 @@
 import { Link, Message, StyledErrorPage } from './Error.sc';
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-const ErrorPage = () => (
+const ErrorPage: FunctionComponent = () => (
     <StyledErrorPage>
         <Message>
             {'Oops, something went wrong'}

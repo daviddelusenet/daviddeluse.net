@@ -1,11 +1,11 @@
+import React, { FunctionComponent } from 'react';
 import GlobalStyle from './styles/base';
 import { hot } from 'react-hot-loader';
-import React from 'react';
 import Router from './Router';
-import { useSelector } from 'react-redux';
+import useSelector from './state/useSelector';
 
-const App = () => {
-    const isInverted = useSelector(({ buttonInvert }) => buttonInvert.isInverted);
+const App: FunctionComponent = () => {
+    const isInverted = useSelector(({ global }) => global.isInverted);
 
     return (
         <div className={`app ${isInverted ? 'is-inverted' : ''}`}>

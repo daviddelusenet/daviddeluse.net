@@ -1,0 +1,16 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.enable": true,
+    "eslint.probe": [
+        "javascript",
+        "typescript",
+        "typescriptreact",
+    ],
+    "files.eol": "\n",
+    "files.trimTrailingWhitespace": true,
+    "typescript.validate.enable": true,
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "stylelint.enable": true,
+}

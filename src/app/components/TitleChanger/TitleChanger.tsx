@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { FunctionComponent, useCallback, useEffect } from 'react';
 
 const originalTitle = document.title;
 
@@ -21,7 +21,7 @@ const titles = [
     'We offer you the finest of the finer things',
 ];
 
-const TitleChanger = () => {
+const TitleChanger: FunctionComponent = () => {
     const onChangeTitleCallback = useCallback(() => {
         document.title =
             document.visibilityState === 'visible' ? originalTitle : titles[Math.floor(Math.random() * titles.length)];

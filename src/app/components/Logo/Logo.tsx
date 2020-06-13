@@ -1,7 +1,7 @@
 import { Circle, Image, Square, StyledLogo, Video } from './Logo.sc';
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-const Logo = () => (
+const Logo: FunctionComponent = () => (
     <StyledLogo>
         <Square>
             <Circle>

@@ -1,17 +1,17 @@
 import { BLACK, WHITE } from '../../utils/consts';
 import { Circle, StyledScrollDownIndicator } from './ScrollDownIndicator.sc';
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { FunctionComponent, useCallback, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { useSelector } from 'react-redux';
+import useSelector from '../../state/useSelector';
 
-let scrollDownIndicatorTimeline;
+let scrollDownIndicatorTimeline: gsap.core.Timeline | undefined;
 
-const ScrollDownIndicator = () => {
+const ScrollDownIndicator: FunctionComponent = () => {
     const circleOneRef = useRef(null);
     const circleTwoRef = useRef(null);
     const circleThreeRef = useRef(null);
     const circleFourRef = useRef(null);
-    const isInverted = useSelector(({ buttonInvert }) => buttonInvert.isInverted);
+    const isInverted = useSelector(({ global }) => global.isInverted);
 
     const onScrollDownCallback = useCallback(() => {
         window.scrollTo({

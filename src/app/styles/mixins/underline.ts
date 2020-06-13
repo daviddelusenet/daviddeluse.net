@@ -1,7 +1,7 @@
 import { BLACK, WHITE } from '../../utils/consts';
-import { css } from 'styled-components';
+import { css, FlattenSimpleInterpolation } from 'styled-components';
 
-export default ({ bottom = '8px' } = {}) => css`
+export default ({ bottom = '8px' } = {}): FlattenSimpleInterpolation => css`
     &::after {
         display: block;
         position: absolute;

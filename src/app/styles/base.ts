@@ -1,6 +1,6 @@
 import { BLACK, CALIBRI } from '../utils/consts';
 import { createGlobalStyle } from 'styled-components';
-import cursorHover from './mixins/cursorHover';
+import { cursorHover } from './mixins/cursorHover';
 import reset from 'styled-reset';
 
 export default createGlobalStyle`

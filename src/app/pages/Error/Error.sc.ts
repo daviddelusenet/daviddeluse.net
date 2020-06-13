@@ -1,4 +1,4 @@
-import cursorHover from '../../styles/mixins/cursorHover';
+import { cursorHover } from '../../styles/mixins/cursorHover';
 import { Link as RouterLink } from 'react-router-dom';
 import styled from 'styled-components';
 import underline from '../../styles/mixins/underline';

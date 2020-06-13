@@ -1,23 +1,27 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { FunctionComponent, useCallback, useEffect, useRef, useState } from 'react';
 import Button from '../Button/Button';
 
-const AudioPlayer = () => {
-    const audioRef = useRef(null);
+const AudioPlayer: FunctionComponent = () => {
+    const audioRef = useRef<HTMLAudioElement>(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
     const onToggleAudioPlaybackCallback = useCallback(() => {
-        audioRef.current.play().then(() => {
-            if (isPlaying) {
-                audioRef.current.pause();
-            }
+        if (audioRef.current) {
+            void audioRef.current.play().then(() => {
+                if (audioRef.current) {
+                    if (isPlaying) {
+                        audioRef.current.pause();
+                    }
 
-            setIsPlaying(!isPlaying);
-        });
+                    setIsPlaying(!isPlaying);
+                }
+            });
+        }
     }, [audioRef, isPlaying]);
 
     const onKeyPressCallback = useCallback(
-        (event) => {
-            if (event.key === 'p' || event.keyCode === 112) {
+        ({ key, keyCode }: KeyboardEvent) => {
+            if (key === 'p' || keyCode === 112) {
                 onToggleAudioPlaybackCallback();
             }
         },

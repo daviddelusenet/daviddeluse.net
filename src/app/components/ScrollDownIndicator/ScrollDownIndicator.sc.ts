@@ -1,5 +1,5 @@
 import { BLACK, WHITE } from '../../utils/consts';
-import cursorHover from '../../styles/mixins/cursorHover';
+import { cursorHover } from '../../styles/mixins/cursorHover';
 import styled from 'styled-components';
 
 export const StyledScrollDownIndicator = styled.div`

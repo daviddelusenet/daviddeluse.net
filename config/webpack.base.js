@@ -6,7 +6,7 @@ const { distPath, publicPath } = require('./paths');
 
 module.exports = () => ({
     entry: {
-        'daviddeluse.net': resolve(__dirname, './../src/index.js'),
+        'daviddeluse.net': resolve(__dirname, './../src/index.tsx'),
     },
     output: {
         path: distPath,
@@ -19,7 +19,7 @@ module.exports = () => ({
                 use: 'html-loader',
             },
             {
-                test: /\.js$/,
+                test: /\.(js|ts|tsx)$/,
                 exclude: /(node_modules)/,
                 use: 'babel-loader',
             },
@@ -43,5 +43,6 @@ module.exports = () => ({
         alias: {
             'react-dom': '@hot-loader/react-dom',
         },
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
 });

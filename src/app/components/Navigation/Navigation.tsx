@@ -1,8 +1,8 @@
 import { Link, LinkInner, StyledNavigation } from './Navigation.sc';
+import React, { FunctionComponent } from 'react';
 import Divider from '../Divider/Divider';
-import React from 'react';
 
-const Navigation = () => (
+const Navigation: FunctionComponent = () => (
     <StyledNavigation>
         <Link href="https://github.com/daviddelusenet" target="_blank">
             <LinkInner>{'Github'}</LinkInner>
