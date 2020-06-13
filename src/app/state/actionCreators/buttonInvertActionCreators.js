@@ -2,5 +2,5 @@
 import BUTTON_INVERT from '../actions/buttonInvertActions';
 
 export const toggleInvert = () => ({
-  type: BUTTON_INVERT.INVERT,
+    type: BUTTON_INVERT.INVERT,
 });

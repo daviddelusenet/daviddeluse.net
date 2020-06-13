@@ -6,30 +6,29 @@ import React from 'react';
 import { toggleInvert } from '../../state/actionCreators/buttonInvertActionCreators';
 
 class ButtonInvert extends React.PureComponent {
-  static propTypes = {
-    actions: PropTypes.shape({
-      toggleInvert: PropTypes.func.isRequired,
-    }).isRequired,
-  };
+    static propTypes = {
+        actions: PropTypes.shape({
+            toggleInvert: PropTypes.func.isRequired,
+        }).isRequired,
+    };
 
-  handleToggleInvert = () => {
-    const { actions } = this.props;
-    actions.toggleInvert();
-  };
+    handleToggleInvert = () => {
+        const { actions } = this.props;
+        actions.toggleInvert();
+    };
 
-  render() {
-    return (
-      <Button onClick={this.handleToggleInvert}>
-        [ I ] Invert
-      </Button>
-    );
-  }
+    render() {
+        return <Button onClick={this.handleToggleInvert}>{'[ I ] Invert'}</Button>;
+    }
 }
 
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({
-    toggleInvert,
-  }, dispatch),
+const mapDispatchToProps = (dispatch) => ({
+    actions: bindActionCreators(
+        {
+            toggleInvert,
+        },
+        dispatch
+    ),
 });
 
 export default connect(null, mapDispatchToProps)(ButtonInvert);

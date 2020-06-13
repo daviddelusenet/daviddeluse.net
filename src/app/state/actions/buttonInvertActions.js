@@ -1,3 +1,3 @@
 export default {
-  INVERT: 'BUTTON_INVERT.INVERT',
+    INVERT: 'BUTTON_INVERT.INVERT',
 };

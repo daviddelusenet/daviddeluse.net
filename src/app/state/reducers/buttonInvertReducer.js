@@ -3,19 +3,19 @@
 import BUTTON_INVERT from '../actions/buttonInvertActions';
 
 const DEFAULT_STATE = {
-  isInverted: false,
+    isInverted: false,
 };
 
 const buttonInvertReducer = (state = DEFAULT_STATE, action) => {
-  switch (action.type) {
-    case BUTTON_INVERT.INVERT:
-      return {
-        isInverted: !state.isInverted,
-      };
+    switch (action.type) {
+        case BUTTON_INVERT.INVERT:
+            return {
+                isInverted: !state.isInverted,
+            };
 
-    default:
-      return state;
-  }
+        default:
+            return state;
+    }
 };
 
 export default buttonInvertReducer;

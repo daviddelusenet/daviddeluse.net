@@ -5,15 +5,15 @@ import React from 'react';
 import TitleChanger from './components/TitleChanger/TitleChanger';
 
 const Router = () => (
-  <>
-    <TitleChanger />
-    <BrowserRouter>
-      <Switch>
-        <Route component={HomePage} exact path="/" />
-        <Route component={ErrorPage} />
-      </Switch>
-    </BrowserRouter>
-  </>
+    <>
+        <TitleChanger />
+        <BrowserRouter>
+            <Switch>
+                <Route component={HomePage} exact path="/" />
+                <Route component={ErrorPage} />
+            </Switch>
+        </BrowserRouter>
+    </>
 );
 
 export default Router;

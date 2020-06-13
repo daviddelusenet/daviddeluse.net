@@ -5,11 +5,11 @@ import React from 'react';
 import StyledControls from './Controls.sc';
 
 const Controls = () => (
-  <StyledControls>
-    <AudioPlayer />
-    <Divider />
-    <ButtonInvert />
-  </StyledControls>
+    <StyledControls>
+        <AudioPlayer />
+        <Divider />
+        <ButtonInvert />
+    </StyledControls>
 );
 
 export default Controls;

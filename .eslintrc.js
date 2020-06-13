@@ -45,15 +45,13 @@ module.exports = {
             },
         ],
         'prettier/prettier': 2,
+        'react/jsx-curly-brace-presence': 0,
         'react/jsx-filename-extension': 0,
         'react/jsx-key': [2, {
             checkFragmentShorthand: true,
         }],
-        'react/jsx-max-props-per-line': [2, {
-            maximum: 3,
-        }],
-        'react/jsx-one-expression-per-line': [2, {
-            allow: 'literal',
+        'react/jsx-no-literals': [2, {
+            noStrings: false,
         }],
         'react/jsx-sort-default-props': [2, {
             ignoreCase: false,

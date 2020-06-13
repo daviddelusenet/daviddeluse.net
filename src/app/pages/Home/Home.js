@@ -6,12 +6,12 @@ import ScrollDownIndicator from '../../components/ScrollDownIndicator/ScrollDown
 import StyledHomePage from './Home.sc';
 
 const HomePage = () => (
-  <StyledHomePage>
-    <Controls />
-    <Navigation />
-    <Logo />
-    <ScrollDownIndicator />
-  </StyledHomePage>
+    <StyledHomePage>
+        <Controls />
+        <Navigation />
+        <Logo />
+        <ScrollDownIndicator />
+    </StyledHomePage>
 );
 
 export default HomePage;
