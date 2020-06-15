@@ -1,4 +1,3 @@
-import { BLACK, WHITE } from '../../utils/consts';
 import styled from 'styled-components';
 import underline from '../../styles/mixins/underline';
 
@@ -15,12 +14,8 @@ export const Link = styled.a`
     position: relative;
     text-decoration: none;
     line-height: 1;
-    color: ${WHITE};
+    color: ${({ theme }) => theme.primaryTextColor};
     font-size: 18px;
-
-    .is-inverted & {
-        color: ${BLACK};
-    }
 `;
 
 export const LinkInner = styled.span`

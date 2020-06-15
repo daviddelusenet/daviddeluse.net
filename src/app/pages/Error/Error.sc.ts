@@ -2,7 +2,6 @@ import { cursorHover } from '../../styles/mixins/cursorHover';
 import { Link as RouterLink } from 'react-router-dom';
 import styled from 'styled-components';
 import underline from '../../styles/mixins/underline';
-import { WHITE } from '../../utils/consts';
 
 export const StyledErrorPage = styled.div`
     display: flex;
@@ -12,7 +11,7 @@ export const StyledErrorPage = styled.div`
     padding: 20px;
     max-width: 620px;
     height: 100vh;
-    color: ${WHITE};
+    color: ${({ theme }) => theme.primaryTextColor};
 `;
 
 export const Message = styled.p`
@@ -25,7 +24,7 @@ export const Link = styled(RouterLink)`
     position: relative;
     text-transform: uppercase;
     text-decoration: none;
-    color: ${WHITE};
+    color: ${({ theme }) => theme.primaryTextColor};
     font-size: 16px;
     font-weight: 700;
 

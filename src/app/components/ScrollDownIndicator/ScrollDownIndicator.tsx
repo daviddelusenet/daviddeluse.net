@@ -1,7 +1,7 @@
-import { BLACK, WHITE } from '../../utils/consts';
 import { Circle, StyledScrollDownIndicator } from './ScrollDownIndicator.sc';
-import React, { FunctionComponent, useCallback, useEffect, useRef } from 'react';
+import React, { FunctionComponent, useCallback, useContext, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { ThemeContext } from 'styled-components';
 import useSelector from '../../state/useSelector';
 
 let scrollDownIndicatorTimeline: gsap.core.Timeline | undefined;
@@ -12,6 +12,7 @@ const ScrollDownIndicator: FunctionComponent = () => {
     const circleThreeRef = useRef(null);
     const circleFourRef = useRef(null);
     const isInverted = useSelector(({ global }) => global.isInverted);
+    const theme = useContext(ThemeContext);
 
     const onScrollDownCallback = useCallback(() => {
         window.scrollTo({
@@ -32,7 +33,7 @@ const ScrollDownIndicator: FunctionComponent = () => {
 
         scrollDownIndicatorTimeline
             .set(circleFourRef.current, {
-                backgroundColor: isInverted ? WHITE : BLACK,
+                backgroundColor: theme.primaryBackgroundColor,
                 height: 12,
                 width: 12,
             })
@@ -52,7 +53,7 @@ const ScrollDownIndicator: FunctionComponent = () => {
                 y: 66,
             })
             .to(circleFourRef.current, 0.5, {
-                backgroundColor: isInverted ? BLACK : WHITE,
+                backgroundColor: theme.secondaryBackgroundColor,
                 ease: 'power3.easeOut',
                 height: 24,
                 width: 24,

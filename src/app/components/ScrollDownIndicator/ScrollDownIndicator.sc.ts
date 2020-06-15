@@ -1,4 +1,3 @@
-import { BLACK, WHITE } from '../../utils/consts';
 import { cursorHover } from '../../styles/mixins/cursorHover';
 import styled from 'styled-components';
 
@@ -17,14 +16,9 @@ export const StyledScrollDownIndicator = styled.div`
 export const Circle = styled.div`
     position: absolute;
     top: 0;
-    border: 1px solid ${WHITE};
+    border: 1px solid ${({ theme }) => theme.primaryTextColor};
     border-radius: 100%;
-    background-color: ${BLACK};
+    background-color: ${({ theme }) => theme.primaryBackgroundColor};
     width: 12px;
     height: 12px;
-
-    .is-inverted & {
-        border-color: ${BLACK};
-        background-color: ${WHITE};
-    }
 `;

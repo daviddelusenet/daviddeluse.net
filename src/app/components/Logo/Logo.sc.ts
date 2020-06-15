@@ -1,4 +1,3 @@
-import { BLACK, WHITE } from '../../utils/consts';
 import styled from 'styled-components';
 
 export const StyledLogo = styled.div`
@@ -14,13 +13,9 @@ export const StyledLogo = styled.div`
 
 export const Square = styled.div`
     position: relative;
-    border: 2px solid ${WHITE};
+    border: 2px solid ${({ theme }) => theme.primaryTextColor};
     width: 300px;
     height: 300px;
-
-    .is-inverted & {
-        border-color: ${BLACK};
-    }
 `;
 
 export const Circle = styled.div`
@@ -28,15 +23,11 @@ export const Circle = styled.div`
     top: 5%;
     left: 5%;
     z-index: 1;
-    border: 2px solid ${WHITE};
+    border: 2px solid ${({ theme }) => theme.primaryTextColor};
     border-radius: 100%;
     width: 90%;
     height: 90%;
     overflow: hidden;
-
-    .is-inverted & {
-        border-color: ${BLACK};
-    }
 `;
 
 export const Video = styled.video`
