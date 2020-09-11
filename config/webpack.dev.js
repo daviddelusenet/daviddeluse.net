@@ -1,6 +1,5 @@
-const webpack = require('webpack');
 const { resolve } = require('path');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const baseConfig = require('./webpack.base');
 
 module.exports = () => (
@@ -13,8 +12,5 @@ module.exports = () => (
             open: true,
             publicPath: '/',
         },
-        plugins: [
-            new webpack.NamedModulesPlugin(),
-        ],
     })
 );
